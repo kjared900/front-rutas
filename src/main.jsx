@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
@@ -22,21 +22,21 @@ const App = () => {
     actualizar();
   }, [])
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Navi />
       <Routes>
         <Route exact path="/" element={<Home alumnos={data} actualizar = {actualizar} />} />
         <Route
-          path="/#/registrar"
+          path="/registrar"
           element={<Registrar />}
         />
-        <Route path="/#/alumno/:id" element={<Alumno  />} />
+        <Route path="/alumno/:id" element={<Alumno  />} />
         <Route
-          path="/#/alumno/editar/:id"
+          path="/alumno/editar/:id"
           element={<EditarAlumno alumnos={data} setAlumnos={setData} />}
         />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

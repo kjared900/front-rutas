@@ -1,5 +1,7 @@
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
+
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
@@ -22,7 +24,7 @@ const App = () => {
     actualizar();
   }, [])
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navi />
       <Routes>
         <Route exact path="/" element={<Home alumnos={data} actualizar = {actualizar} />} />
@@ -36,9 +38,8 @@ const App = () => {
           element={<EditarAlumno alumnos={data} setAlumnos={setData} />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+ReactDOM.render(<App />, document.getElementById('root'));

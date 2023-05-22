@@ -64,8 +64,8 @@ const Home = ({ alumnos, actualizar }) => {
                 <td>{alumno.nombre}</td>
                 <td>{alumno.carrera}</td>
                 <td>{alumno.semestre}</td>
-                <td><button onClick={() => cambiar(`/alumno/${alumno.matricula}`)} className='btn btn-success'><i className="bi bi-gear-fill "></i></button></td>
-                <td><button onClick={() => cambiar(`/alumno/editar/${alumno.matricula}`)} className='btn btn-warning'><i className="bi bi-pencil-fill"></i></button></td>
+                <td><button onClick={() => cambiar(`/#/alumno/${alumno.matricula}`)} className='btn btn-success'><i className="bi bi-gear-fill "></i></button></td>
+                <td><button onClick={() => cambiar(`/#/alumno/editar/${alumno.matricula}`)} className='btn btn-warning'><i className="bi bi-pencil-fill"></i></button></td>
                 <td><button onClick={() => eliminar(alumno.matricula)} className='btn btn-danger'><i className="bi bi-trash2-fill"></i></button></td>
               </tr>
             )
